@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/*
+ * Rivertree palette — forest green (tree), river blue, deep navy text.
+ * Swap these tokens to match the official brand guide.
+ */
+@theme {
+  --font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+  --color-brand: #1e5b3e;
+  --color-brand-dark: #164530;
+  --color-brand-soft: #eaf1ec;
+  --color-river: #2c6e8f;
+  --color-river-soft: #e9f1f5;
+  --color-ink: #1b2a38;
+  --color-muted: #5f6b66;
+  --color-line: #e3e7e3;
+  --color-canvas: #f6f7f5;
+  --color-surface: #ffffff;
+  --color-danger: #b42318;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-brand-soft);
+}
+
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #cfd6d1 transparent;
+}
+
+.prose-rt p + p,
+.prose-rt p + ul,
+.prose-rt ul + p,
+.prose-rt p + ol,
+.prose-rt ol + p {
+  margin-top: 0.75rem;
+}
+.prose-rt ul,
+.prose-rt ol {
+  padding-left: 1.25rem;
+}
+.prose-rt ul {
+  list-style: disc;
+}
+.prose-rt ol {
+  list-style: decimal;
+}
+.prose-rt li + li {
+  margin-top: 0.25rem;
+}
+.prose-rt strong {
+  font-weight: 700;
+}
+
+@keyframes rt-pulse {
+  0%, 80%, 100% { opacity: 0.25; }
+  40% { opacity: 1; }
+}
+.typing span {
+  animation: rt-pulse 1.2s infinite;
+}
+.typing span:nth-child(2) { animation-delay: 0.15s; }
+.typing span:nth-child(3) { animation-delay: 0.3s; }
